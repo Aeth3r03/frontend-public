@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { environment } from "../../environments/environment";
-import { Producto } from "./producto";
+import { Producto } from "../models/producto";
 
 @Injectable({ providedIn: 'root' }) 
 export class ProductoService {
@@ -10,8 +10,8 @@ export class ProductoService {
 
     constructor(private http: HttpClient) {}
 
-    listar(nombre?: string): Observable<Producto[]> {
+    listarProductos(nombre?: string): Observable<Producto[]> {
         const url = nombre ? `${this.apiUrl}/?nombre=${nombre}` : `${this.apiUrl}/`;
-        return this.http.get<Producto[]>(url)
+        return this.http.get<Producto[]>(url);
     }
 }

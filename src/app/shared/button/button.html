@@ -1,0 +1,10 @@
+<button
+    class="px-4 py-2 rounded-lg font-medium transition-colors"
+    [class.bg-primary]="variant === 'primary'"
+    [class.text-white]="variant ==='primary'"
+    [class.hover:bg-primary-dark]="variant === 'primary'"
+    [class.bg-gray-200]="variant === 'secondary'"
+    [class.text-neutral-dark]="variant === 'secondary'"
+>
+    <ng-content></ng-content>
+</button>

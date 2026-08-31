@@ -1,0 +1,14 @@
+<div class="max-w-6xl mx-auto px-4 py-8">
+  <h1 class="text-2xl mb-5">Categorías</h1>
+  @if (cargando()) {
+    <p class="text-ink/50">Cargando productos...</p>
+  } @else if (categorias().length === 0) {
+    <p class="text-ink/50">No se pudieron cargar las categorías.</p>
+  } @else {
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+        @for (categoria of categorias(); track categoria.id; let i = $index) {
+            <app-categoria-title [categoria]="categoria" [colorIndex]="i" [imageIndex]="i"/>
+          } 
+      </div>
+    }
+</div>
