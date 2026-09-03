@@ -16,8 +16,9 @@ export class CategoriaTitle {
   @Input() colorIndex: number = 0;
   @Input() imageIndex: number = 0;
   productos = signal<Producto[]>([])
+  imgFallo = signal(false);
   private paleta = ['bg-primary/10', 'bg-accent/10', 'bg-purple-border/10', 'bg-line', 'bg-red-border/10'];
-  private imagenPlaceholder = '/imagenes/categoria-placeholder.jpg';
+  imagenPlaceholder = '/imagenes/categoria-placeholder.jpg';
 
   constructor(private categoriaService: CategoriaService) {};
 

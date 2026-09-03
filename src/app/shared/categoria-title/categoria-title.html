@@ -1,8 +1,12 @@
 <a [routerLink]="['/categorias', categoria.id]"
     class="group block rounded-lg overflow-hidden border border-line hover:border-primary transition-colors">
     <div class="aspect-square overflow-hidden">
-        <img [src]="imageUrl" [alt]="categoria.nombre"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+        <img 
+            [src]="imgFallo() ? imagenPlaceholder : imageUrl" 
+            (error)="imgFallo.set(true)"
+            [alt]="categoria.nombre"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
+        />
     </div>
     <div class="p-3">
         <h2 class="text-sm">{{ categoria.nombre }}</h2>
