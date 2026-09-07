@@ -8,5 +8,6 @@ RUN npm run build
 
 # Ahora servir con Nginx
 FROM nginx:alpine
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /app/dist/frontend-publico/browser /usr/share/nginx/html
 EXPOSE 80
